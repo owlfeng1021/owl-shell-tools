@@ -1,0 +1,2 @@
+#!/bin/zsh
+while ; do xargs ydict -v $1 ; done 
