@@ -7,7 +7,7 @@ void main()
             {
             chick=100-cock-hen;
             if((cock*5)+(hen*3)+(chick/3)==100)
-            printf("cock:%d hen:%d aawssdddds1sasdasdassssasdasdaq真21dddsdfsdfadasdasdsdsssssssasdss是鸡123吗1 chick:%d\n",cock,hen,chick);
+            printf("cock:%d hen:%d chick:%d\n",cock,hen,chick);
             }
 
 
