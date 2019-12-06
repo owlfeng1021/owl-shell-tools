@@ -1,0 +1,20 @@
+#!/bin/bash
+# needs two param  first param is filename , second param is pause time 
+inotifywait -e close_write,moved_to,create -m . |
+while read -r directory events filename; do
+  if [ "$filename" = $1 ]; then
+    gcc -o ./result $1 && sleep $2 && ./result  
+  fi
+done
+
+#DESTHOST=172.16.100.6
+#DESTHOSTDIR=/www/htdocs/
+#SRCDIR=/www/htdocs/
+
+
+#inotifywait -m --timefmt '%d/%m/%y %H:%M' --format '%T %w %f' \
+#-e create,delete,modify,attrib $1 | 
+#while read DATE TIME DIR FILE;do
+#      	gcc -o ./result ./$1
+#       echo "modify"	;done
+# $FILECHANGE=${DIR}${FILE} rsync -avze 'ssh' $SRCDIR root@${DESTHOST}:${DESTHOSTDIR} &>/dev/null && \ echo "At ${TIME} on ${DATE}, file $FILECHANGE was backed up via rsync" >> /var/log/filesync.log done
